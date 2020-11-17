@@ -14,6 +14,7 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var confirmPasswordField: UITextField!
     @IBOutlet weak var birthDateField: UITextField!
+    @IBOutlet weak var errorMessageLabel: UILabel!
     
     var presenter = SignUpPresenter()
     
@@ -26,6 +27,8 @@ class SignUpViewController: UIViewController {
         passwordField.delegate = self
         confirmPasswordField.delegate = self
         birthDateField.delegate = self
+        
+        presenter.delegate = self
     }
     
     @IBAction func subscribeUser(_ sender: UIButton) {
@@ -33,12 +36,20 @@ class SignUpViewController: UIViewController {
     }
     
     func trySigningUp() {
-        // to do last: checar se os required fields foram preenchidos
-        // check is passwords match
+        birthDateField.endEditing(true)
         presenter.getSignedUp(name: nameField.text!, email: emailField.text!, password: passwordField.text!)
-        // esperar resposta: se autorizar, segue to feed; se não, mostra qual foi o erro
     }
 
+}
+
+extension SignUpViewController: SignInUpDelegate {
+
+    func userDidNotAuth(errorMessage: String) {
+        DispatchQueue.main.async {
+            self.errorMessageLabel.text = errorMessage
+            self.errorMessageLabel.isHidden = false
+        }
+    }
 }
 
 extension SignUpViewController: UITextFieldDelegate {
@@ -49,7 +60,6 @@ extension SignUpViewController: UITextFieldDelegate {
         if fieldIndex < textFields.count - 1 {
             textFields[fieldIndex + 1]!.becomeFirstResponder()
         } else {
-            textField.endEditing(true)
             trySigningUp()
         }
         return true

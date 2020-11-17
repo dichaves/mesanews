@@ -44,45 +44,23 @@ class SignInViewController: UIViewController {
     }
 
     @IBAction func nativeLogin(_ sender: UIButton) {
-        loginPassword.endEditing(true)
         trySigningIn()
     }
     
     func trySigningIn() {
-        // to do last: checar se os required fields foram preenchidos
+        loginPassword.endEditing(true)
         presenter.getSignedIn(email: loginEmail.text!, password: loginPassword.text!)
-        // esperar resposta: se autorizar, segue to feed; se não, mostra qual foi o erro
     }
 }
 
-extension SignInViewController: SignInDelegate {
-    func userDidAuth() {
-//        self.token = token
+extension SignInViewController: SignInUpDelegate {
+
+    func userDidNotAuth(errorMessage: String) {
         DispatchQueue.main.async {
-//            self.performSegue(withIdentifier: "SignInToFeed", sender: self)
-//            let navigationController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SecondNavigationController")
-//            self.present(navigationController, animated: true, completion: nil)
-            
-//             TESTAR DEPOIS DE ADICIONAR O SINGLETON!!!!
-            let feedViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "FeedViewController") as! FeedViewController
-            UIApplication.shared.windows.first?.rootViewController = feedViewController
-            UIApplication.shared.windows.first?.makeKeyAndVisible()
-        }
-    }
-    
-    func userDidNotAuth(message: String) {
-        DispatchQueue.main.async {
-            self.errorMessageLabel.text = message
+            self.errorMessageLabel.text = errorMessage
             self.errorMessageLabel.isHidden = false
         }
     }
-    
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == "SignInToFeed" {
-//            let feedVC = segue.destination as! FeedViewController
-//            feedVC.token = self.token
-//        }
-//    }
 }
 
 extension SignInViewController: UITextFieldDelegate {
@@ -91,7 +69,6 @@ extension SignInViewController: UITextFieldDelegate {
         if textField == loginEmail {
             loginPassword.becomeFirstResponder()
         } else if textField == loginPassword {
-            loginPassword.endEditing(true)
             trySigningIn()
         }
         return true

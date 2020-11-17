@@ -8,5 +8,6 @@ target 'Mesa News' do
   # Pods for Mesa News
   pod 'FBSDKCoreKit'
   pod 'FBSDKLoginKit'
+  pod 'Kingfisher', '~> 4.0'
 
 end

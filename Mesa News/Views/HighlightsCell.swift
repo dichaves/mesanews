@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class HighlightsCell: UICollectionViewCell {
     
@@ -20,7 +21,7 @@ class HighlightsCell: UICollectionViewCell {
     }
     
     func updateUI() {
-        imageView.image = UIImage()
+        imageView.kf.setImage(with: URL(string: news.image_url))
         titleLabel.text = news.title
         descriptionLabel.text = news.description
     }

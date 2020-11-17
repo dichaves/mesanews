@@ -28,14 +28,11 @@ struct Authentication {
         
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
             guard let data = data else {
-                print("deu ruim")
                 print(String(describing: error))
                 return
             }
-            print("foi quase")
             print(String(data: data, encoding: .utf8)!)
             if let userAuth = self.parseJSON(authData: data) {
-                print("deu bom")
                 self.delegate?.didAuthenticate(user: userAuth)
             } else {
                 self.delegate?.didNotAuthenticate(data: data)

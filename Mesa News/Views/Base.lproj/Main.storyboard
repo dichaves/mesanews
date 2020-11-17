@@ -203,6 +203,12 @@
                                             </textField>
                                         </subviews>
                                     </stackView>
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4zO-xz-mNa">
+                                        <rect key="frame" x="0.0" y="553.5" width="314" height="0.0"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" systemColor="systemRedColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0hD-5a-2z9">
                                         <rect key="frame" x="0.0" y="575" width="314" height="72"/>
                                         <color key="backgroundColor" systemColor="labelColor"/>
@@ -223,6 +229,7 @@
                             <constraint firstItem="Q2o-7F-MVt" firstAttribute="leading" secondItem="q1d-sI-dXs" secondAttribute="leading" constant="50" id="BRh-ct-CNO"/>
                             <constraint firstItem="q1d-sI-dXs" firstAttribute="trailing" secondItem="Q2o-7F-MVt" secondAttribute="trailing" constant="50" id="Ft3-W6-9aJ"/>
                             <constraint firstItem="Q2o-7F-MVt" firstAttribute="top" secondItem="q1d-sI-dXs" secondAttribute="top" constant="18" id="VvM-de-tS9"/>
+                            <constraint firstItem="q1d-sI-dXs" firstAttribute="bottom" secondItem="Q2o-7F-MVt" secondAttribute="bottom" constant="55" id="kun-eU-VUo"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Cadastro" id="IHt-5U-bgJ"/>
@@ -230,6 +237,7 @@
                         <outlet property="birthDateField" destination="sLw-Vc-C9T" id="RXZ-Xa-VDY"/>
                         <outlet property="confirmPasswordField" destination="Tvu-DX-FZy" id="6MJ-vx-zhz"/>
                         <outlet property="emailField" destination="I90-sj-0Wt" id="Q8s-vR-7XR"/>
+                        <outlet property="errorMessageLabel" destination="4zO-xz-mNa" id="9mt-Oi-P14"/>
                         <outlet property="nameField" destination="atc-M4-bnz" id="gzW-Lh-u1E"/>
                         <outlet property="passwordField" destination="Zyo-7F-eyl" id="BYW-W9-iuJ"/>
                     </connections>
@@ -243,17 +251,17 @@
             <objects>
                 <viewController storyboardIdentifier="FeedViewController" id="uhx-pL-xpp" customClass="FeedViewController" customModule="Mesa_News" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ubJ-Ar-722">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Destaques" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Hn-lo-M6Y">
-                                <rect key="frame" x="0.0" y="88" width="414" height="48"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="48"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="40"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="bOt-XF-ntp">
-                                <rect key="frame" x="0.0" y="136" width="414" height="271"/>
+                                <rect key="frame" x="0.0" y="48" width="414" height="283"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="TWC-xm-crX">
                                     <size key="itemSize" width="414" height="258"/>
@@ -263,7 +271,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="HighlightsCell" translatesAutoresizingMaskIntoConstraints="NO" id="IEc-Ks-M2X" customClass="HighlightsCell" customModule="Mesa_News" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="7" width="414" height="258"/>
+                                        <rect key="frame" x="0.0" y="13" width="414" height="258"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="gIw-pT-P9E">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="258"/>
@@ -275,7 +283,7 @@
                                                         <constraint firstAttribute="width" secondItem="MY6-dH-fdV" secondAttribute="height" multiplier="2:1" id="DfB-S8-wcW"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Título da notícia" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oew-5b-LKT">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Título da notícia" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oew-5b-LKT">
                                                     <rect key="frame" x="0.0" y="207" width="414" height="24"/>
                                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
                                                     <nil key="textColor"/>
@@ -310,13 +318,13 @@
                                 </cells>
                             </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notícias" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QtA-8g-ztl">
-                                <rect key="frame" x="0.0" y="407" width="414" height="36"/>
+                                <rect key="frame" x="0.0" y="331" width="414" height="36"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="auB-1f-WAm">
-                                <rect key="frame" x="0.0" y="443" width="414" height="427"/>
+                                <rect key="frame" x="0.0" y="367" width="414" height="449"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="NewsCell" id="W1i-jK-6ch" customClass="NewsCell" customModule="Mesa_News" customModuleProvider="target">
@@ -326,7 +334,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Título da notícia" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N7o-9a-srR" userLabel="Título da notícia">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Título da notícia" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N7o-9a-srR" userLabel="Título da notícia">
                                                     <rect key="frame" x="20" y="0.0" width="394" height="24"/>
                                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
                                                     <nil key="textColor"/>
@@ -393,7 +401,7 @@
             <objects>
                 <viewController id="bfX-8N-lIF" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="RqJ-5Z-CpV">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="g3T-Md-BU5"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -409,11 +417,11 @@
             <objects>
                 <viewController id="dLZ-gz-uFA" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tsG-Ej-KEg">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jpS-zi-JgM">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <wkWebViewConfiguration key="configuration">
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
@@ -478,7 +486,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="JLi-ui-rjP"/>
+        <segue reference="g16-Oq-FtH"/>
     </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="labelColor">

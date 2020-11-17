@@ -9,20 +9,24 @@ PODS:
     - FBSDKLoginKit/Login (= 8.1.0)
   - FBSDKLoginKit/Login (8.1.0):
     - FBSDKCoreKit (~> 8.1.0)
+  - Kingfisher (4.10.1)
 
 DEPENDENCIES:
   - FBSDKCoreKit
   - FBSDKLoginKit
+  - Kingfisher (~> 4.0)
 
 SPEC REPOS:
   trunk:
     - FBSDKCoreKit
     - FBSDKLoginKit
+    - Kingfisher
 
 SPEC CHECKSUMS:
   FBSDKCoreKit: b3ca27e124dae67122d3bb47c8f96800b39986a6
   FBSDKLoginKit: a3a92ba9380759cd0c1aa8319465fb5f2857c602
+  Kingfisher: c148cd7b47ebde9989f6bc7c27dcaa79d81279a0
 
-PODFILE CHECKSUM: 31bb93ffe1707937b7d99ffb215de39968e24756
+PODFILE CHECKSUM: f68b4a004d4746028980f08a1548425303c676d1
 
 COCOAPODS: 1.10.0

@@ -18,6 +18,7 @@
 		AC809CBC255E570F00C6DB75 /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC809CBB255E570F00C6DB75 /* Authentication.swift */; };
 		AC809CBF255F0F5000C6DB75 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC809CBE255F0F5000C6DB75 /* SignUpViewController.swift */; };
 		ACA0F0522564854E00329B68 /* ActiveUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA0F0512564854E00329B68 /* ActiveUser.swift */; };
+		ACA0F05B2564981E00329B68 /* SignInUpDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA0F05A2564981E00329B68 /* SignInUpDelegate.swift */; };
 		ACA2CA002563AAB9006313E7 /* NewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA2C9FF2563AAB9006313E7 /* NewsCell.swift */; };
 		ACA3C041255CD3A40047A979 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA3C040255CD3A40047A979 /* AppDelegate.swift */; };
 		ACA3C043255CD3A40047A979 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA3C042255CD3A40047A979 /* SceneDelegate.swift */; };
@@ -46,6 +47,7 @@
 		AC809CBB255E570F00C6DB75 /* Authentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authentication.swift; sourceTree = "<group>"; };
 		AC809CBE255F0F5000C6DB75 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		ACA0F0512564854E00329B68 /* ActiveUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveUser.swift; sourceTree = "<group>"; };
+		ACA0F05A2564981E00329B68 /* SignInUpDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInUpDelegate.swift; sourceTree = "<group>"; };
 		ACA2C9FF2563AAB9006313E7 /* NewsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCell.swift; sourceTree = "<group>"; };
 		ACA3C03D255CD3A40047A979 /* Mesa News.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mesa News.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACA3C040255CD3A40047A979 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 		AC809CB9255E3E6400C6DB75 /* Presenters */ = {
 			isa = PBXGroup;
 			children = (
+				ACA0F05A2564981E00329B68 /* SignInUpDelegate.swift */,
 				ACFDE032255F3A7200352271 /* SignInPresenter.swift */,
 				ACFDE038255F994F00352271 /* SignUpPresenter.swift */,
 				AC18C80B25638438003D3368 /* FeedPresenter.swift */,
@@ -293,6 +296,7 @@
 				AC809CBC255E570F00C6DB75 /* Authentication.swift in Sources */,
 				ACFDE02D255F387600352271 /* SignInUser.swift in Sources */,
 				AC18C80C25638438003D3368 /* FeedPresenter.swift in Sources */,
+				ACA0F05B2564981E00329B68 /* SignInUpDelegate.swift in Sources */,
 				AC4B93C72561FA9E00DB660A /* NewsNetworking.swift in Sources */,
 				ACFDE033255F3A7200352271 /* SignInPresenter.swift in Sources */,
 				AC809CB5255E378C00C6DB75 /* AuthenticatedUser.swift in Sources */,

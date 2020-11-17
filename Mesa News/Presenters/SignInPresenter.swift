@@ -7,15 +7,10 @@
 
 import Foundation
 
-protocol SignInDelegate {
-    func userDidAuth()
-    func userDidNotAuth(message: String)
-}
-
 class SignInPresenter {
     
     var authentication = Authentication()
-    var delegate: SignInDelegate?
+    var delegate: SignInUpDelegate?
 
     init() {
         authentication.delegate = self
@@ -36,8 +31,7 @@ extension SignInPresenter: AuthenticationDelegate {
     
     func didNotAuthenticate(data: Data) {
         let error = decodeError(errorData: data)!
-        print(error.message)
-        delegate?.userDidNotAuth(message: error.message)
+        delegate?.userDidNotAuth(errorMessage: error.message)
     }
     
     func decodeError(errorData: Data) -> Error? {
