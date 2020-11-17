@@ -19,6 +19,10 @@ struct Pagination: Codable {
     let total_items: Int
 }
 
+struct HighlightNews: Codable {
+    let data: [SingleNews]
+}
+
 struct SingleNews: Codable {
     let title: String
     let description: String

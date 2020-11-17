@@ -8,13 +8,13 @@
 import Foundation
 
 protocol SignInDelegate {
-    func returnError(message: String)
+    func userDidAuth()
+    func userDidNotAuth(message: String)
 }
 
-class SignInPresenter: AuthenticationDelegate {
+class SignInPresenter {
     
     var authentication = Authentication()
-    var newsNetworking = NewsNetworking()
     var delegate: SignInDelegate?
 
     init() {
@@ -25,19 +25,19 @@ class SignInPresenter: AuthenticationDelegate {
         let data = SignInUser(email: email, password: password).encode()
         authentication.fetchToken(sign: "in", postData: data!)
     }
+}
+
+extension SignInPresenter: AuthenticationDelegate {
     
-    func didAuthenticate(user: ActiveUser) {
-        let token = user.token
-        print(token)
-        newsNetworking.fetchNews(url: "?current_page=&per_page=&published_at=", token: token)
-        // mandar news pro FeedViewController
-        print("já saiu")
+    func didAuthenticate(user: AuthenticatedUser) {
+        ActiveUser.shared.token = user.token
+        delegate?.userDidAuth()
     }
     
-    func didFindError(data: Data) {
+    func didNotAuthenticate(data: Data) {
         let error = decodeError(errorData: data)!
         print(error.message)
-        delegate?.returnError(message: error.message)
+        delegate?.userDidNotAuth(message: error.message)
     }
     
     func decodeError(errorData: Data) -> Error? {

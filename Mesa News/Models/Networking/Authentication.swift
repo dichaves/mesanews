@@ -8,8 +8,8 @@
 import Foundation
 
 protocol AuthenticationDelegate {
-    func didAuthenticate(user: ActiveUser)
-    func didFindError(data: Data)
+    func didAuthenticate(user: AuthenticatedUser)
+    func didNotAuthenticate(data: Data)
 }
 
 struct Authentication {
@@ -38,7 +38,7 @@ struct Authentication {
                 print("deu bom")
                 self.delegate?.didAuthenticate(user: userAuth)
             } else {
-                self.delegate?.didFindError(data: data)
+                self.delegate?.didNotAuthenticate(data: data)
             }
             semaphore.signal()
         }
@@ -48,17 +48,14 @@ struct Authentication {
     }
     
     
-    func parseJSON(authData: Data) -> ActiveUser? {
+    func parseJSON(authData: Data) -> AuthenticatedUser? {
         let decoder = JSONDecoder()
         do {
-            let decodedData = try decoder.decode(ActiveUser.self, from: authData)
-            print(decodedData)
-            print("try")
-            let token = decodedData.token
-            return ActiveUser(token: token)
+            let activeUser = try decoder.decode(AuthenticatedUser.self, from: authData)
+            print(activeUser)
+            return activeUser
         } catch {
             print(error)
-            print("é, errou")
             return nil
         }
     }

@@ -21,14 +21,14 @@ class SignUpPresenter: AuthenticationDelegate {
         authentication.fetchToken(sign: "up", postData: data!)
     }
     
-    func didAuthenticate(user: ActiveUser) {
+    func didAuthenticate(user: AuthenticatedUser) {
         print("voltou pro presenter")
         let token = user.token
         print(token)
         // usar o token para pegar as News e mandar pra FeedViewController
     }
     
-    func didFindError(data: Data) {
+    func didNotAuthenticate(data: Data) {
         let signUpErrors = decodeError(errorData: data)!
         for error in signUpErrors.errors {
             print(error.message)

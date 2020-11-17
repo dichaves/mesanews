@@ -2,11 +2,15 @@
 //  ActiveUser.swift
 //  Mesa News
 //
-//  Created by Diana Monteiro on 13/11/20.
+//  Created by Diana Monteiro on 17/11/20.
 //
 
 import Foundation
 
-struct ActiveUser: Codable {
-    var token: String
+class ActiveUser {
+    
+    private init() {}
+    static let shared = ActiveUser()
+    
+    var token = ""
 }
