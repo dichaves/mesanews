@@ -73,6 +73,10 @@ extension FeedViewController: UICollectionViewDelegate, UICollectionViewDataSour
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 0, left: 15, bottom: 0, right: 15)
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        prepareSegueFor(index: indexPath.item)
+    }
 }
 
 extension FeedViewController: UITableViewDelegate, UITableViewDataSource {
@@ -88,7 +92,11 @@ extension FeedViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        urlStr = news![indexPath.item].url
+        prepareSegueFor(index: indexPath.item)
+    }
+    
+    func prepareSegueFor(index: Int) {
+        urlStr = news![index].url
         DispatchQueue.main.async { self.performSegue(withIdentifier: "FeedToNewsWebView", sender: self) }
     }
     
