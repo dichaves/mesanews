@@ -28,4 +28,5 @@ struct SingleNews: Codable {
     let highlight: Bool
     let url: String
     let image_url: String
+    var date: Date?
 }

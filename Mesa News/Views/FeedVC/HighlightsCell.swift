@@ -14,16 +14,16 @@ class HighlightsCell: UICollectionViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     
-    var news: SingleNews! {
+    var highlights: SingleNews! {
         didSet {
             self.updateUI()
         }
     }
     
     func updateUI() {
-        imageView.kf.setImage(with: URL(string: news.image_url))
-        titleLabel.text = news.title
-        descriptionLabel.text = news.description
+        imageView.kf.setImage(with: URL(string: highlights.image_url))
+        titleLabel.text = highlights.title
+        descriptionLabel.text = highlights.description
     }
     
 }

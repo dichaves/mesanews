@@ -11,7 +11,16 @@ struct InternalUrl {
     private let baseUrl = "https://mesa-news-api.herokuapp.com/v1/client/"
     var endpoint: Endpoint
     
-    enum Endpoint {
+    enum Endpoint:CustomStringConvertible {
+        var description: String {
+            switch self {
+            case .signIn: return "signIn"
+            case .signUp: return "signUp"
+            case .news: return "news"
+            case .highlights: return "highlights"
+            }
+        }
+        
         case signIn(User)
         case signUp(User)
         case news

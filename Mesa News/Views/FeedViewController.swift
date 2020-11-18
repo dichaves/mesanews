@@ -14,6 +14,7 @@ class FeedViewController: UIViewController {
     
     var presenter = FeedPresenter()
     var news: [SingleNews]?
+    var highlights: [SingleNews]?
     var urlStr: String?
     
     override func viewDidLoad() {
@@ -22,6 +23,7 @@ class FeedViewController: UIViewController {
         presenter.delegate = self
         
         presenter.getNews()
+        presenter.getHighlights()
         
         highlightsCollectionView.delegate = self
         highlightsCollectionView.dataSource = self
@@ -43,6 +45,10 @@ extension FeedViewController: FeedDelegate {
     func updateNews(news: [SingleNews]) {
         self.news = news
     }
+    
+    func updateHighlights(highlights: [SingleNews]) {
+        self.highlights = highlights
+    }
 }
 
 extension FeedViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
@@ -52,12 +58,12 @@ extension FeedViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.news!.count
+        return self.highlights!.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HighlightsCell", for: indexPath) as! HighlightsCell
-        cell.news = news![indexPath.item]
+        cell.highlights = highlights![indexPath.item]
         return cell
     }
     

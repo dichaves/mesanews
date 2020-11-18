@@ -7,7 +7,7 @@
 
 import Foundation
 
-class SignUpPresenter: AuthenticationDelegate {
+class SignUpPresenter: AuthNetworkingDelegate {
     
     var authentication = AuthNetworking()
     var delegate: SignInUpDelegate?

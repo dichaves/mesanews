@@ -9,11 +9,10 @@
 /* Begin PBXBuildFile section */
 		AC18C80C25638438003D3368 /* FeedPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC18C80B25638438003D3368 /* FeedPresenter.swift */; };
 		AC4B93AB2560E5DB00DB660A /* NewsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4B93AA2560E5DA00DB660A /* NewsModel.swift */; };
-		AC4B93B72560FCEF00DB660A /* ModelsExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4B93B62560FCEE00DB660A /* ModelsExtensions.swift */; };
-		AC4B93C02561087000DB660A /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4B93BF2561087000DB660A /* Error.swift */; };
+		AC4B93B72560FCEF00DB660A /* ModelExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4B93B62560FCEE00DB660A /* ModelExtensions.swift */; };
+		AC4B93C02561087000DB660A /* ErrorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4B93BF2561087000DB660A /* ErrorModel.swift */; };
 		AC4B93C32561F65300DB660A /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4B93C22561F65300DB660A /* FeedViewController.swift */; };
 		AC4B93C72561FA9E00DB660A /* NewsNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4B93C62561FA9E00DB660A /* NewsNetworking.swift */; };
-		AC61ED0E25656CD500FF3FB2 /* KeyboardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC61ED0D25656CD500FF3FB2 /* KeyboardManager.swift */; };
 		AC61ED1325658F6000FF3FB2 /* InternalURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC61ED1225658F6000FF3FB2 /* InternalURL.swift */; };
 		AC61ED172565AD9100FF3FB2 /* NetworkingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC61ED162565AD9100FF3FB2 /* NetworkingService.swift */; };
 		AC64188E25632ADB005E7F5E /* HighlightsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC64188D25632ADB005E7F5E /* HighlightsCell.swift */; };
@@ -41,11 +40,10 @@
 		72B28F8774119B8D754CF05D /* Pods-Mesa News.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mesa News.debug.xcconfig"; path = "Target Support Files/Pods-Mesa News/Pods-Mesa News.debug.xcconfig"; sourceTree = "<group>"; };
 		AC18C80B25638438003D3368 /* FeedPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedPresenter.swift; sourceTree = "<group>"; };
 		AC4B93AA2560E5DA00DB660A /* NewsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsModel.swift; sourceTree = "<group>"; };
-		AC4B93B62560FCEE00DB660A /* ModelsExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelsExtensions.swift; sourceTree = "<group>"; };
-		AC4B93BF2561087000DB660A /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
+		AC4B93B62560FCEE00DB660A /* ModelExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelExtensions.swift; sourceTree = "<group>"; };
+		AC4B93BF2561087000DB660A /* ErrorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorModel.swift; sourceTree = "<group>"; };
 		AC4B93C22561F65300DB660A /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		AC4B93C62561FA9E00DB660A /* NewsNetworking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsNetworking.swift; sourceTree = "<group>"; };
-		AC61ED0D25656CD500FF3FB2 /* KeyboardManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardManager.swift; sourceTree = "<group>"; };
 		AC61ED1225658F6000FF3FB2 /* InternalURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternalURL.swift; sourceTree = "<group>"; };
 		AC61ED162565AD9100FF3FB2 /* NetworkingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingService.swift; sourceTree = "<group>"; };
 		AC64188D25632ADB005E7F5E /* HighlightsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighlightsCell.swift; sourceTree = "<group>"; };
@@ -104,15 +102,23 @@
 			path = FeedVC;
 			sourceTree = "<group>";
 		};
+		AC61ED232565BED300FF3FB2 /* Singleton */ = {
+			isa = PBXGroup;
+			children = (
+				ACA0F0512564854E00329B68 /* ActiveUser.swift */,
+			);
+			path = Singleton;
+			sourceTree = "<group>";
+		};
 		AC809CB2255E367700C6DB75 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				AC61ED232565BED300FF3FB2 /* Singleton */,
 				ACFDE02F255F38AB00352271 /* User.swift */,
 				AC809CB4255E378C00C6DB75 /* AuthenticatedUser.swift */,
-				ACA0F0512564854E00329B68 /* ActiveUser.swift */,
-				AC4B93BF2561087000DB660A /* Error.swift */,
+				AC4B93BF2561087000DB660A /* ErrorModel.swift */,
 				AC4B93AA2560E5DA00DB660A /* NewsModel.swift */,
-				AC4B93B62560FCEE00DB660A /* ModelsExtensions.swift */,
+				AC4B93B62560FCEE00DB660A /* ModelExtensions.swift */,
 				AC4B93BC2560FE6B00DB660A /* Networking */,
 			);
 			path = Models;
@@ -123,7 +129,6 @@
 			children = (
 				ACA3C044255CD3A40047A979 /* SignInViewController.swift */,
 				AC809CBE255F0F5000C6DB75 /* SignUpViewController.swift */,
-				AC61ED0D25656CD500FF3FB2 /* KeyboardManager.swift */,
 				AC4B93C22561F65300DB660A /* FeedViewController.swift */,
 				AC61ED1025658B8500FF3FB2 /* FeedVC */,
 				ACA0F05E2564AC1200329B68 /* NewsWebViewController.swift */,
@@ -317,7 +322,6 @@
 				AC4B93C72561FA9E00DB660A /* NewsNetworking.swift in Sources */,
 				ACFDE033255F3A7200352271 /* SignInPresenter.swift in Sources */,
 				ACA0F05F2564AC1200329B68 /* NewsWebViewController.swift in Sources */,
-				AC61ED0E25656CD500FF3FB2 /* KeyboardManager.swift in Sources */,
 				AC809CB5255E378C00C6DB75 /* AuthenticatedUser.swift in Sources */,
 				AC4B93AB2560E5DB00DB660A /* NewsModel.swift in Sources */,
 				AC61ED1325658F6000FF3FB2 /* InternalURL.swift in Sources */,
@@ -326,11 +330,11 @@
 				AC4B93C32561F65300DB660A /* FeedViewController.swift in Sources */,
 				ACA2CA002563AAB9006313E7 /* NewsCell.swift in Sources */,
 				ACA3C045255CD3A40047A979 /* SignInViewController.swift in Sources */,
-				AC4B93B72560FCEF00DB660A /* ModelsExtensions.swift in Sources */,
+				AC4B93B72560FCEF00DB660A /* ModelExtensions.swift in Sources */,
 				ACA3C041255CD3A40047A979 /* AppDelegate.swift in Sources */,
 				ACA3C043255CD3A40047A979 /* SceneDelegate.swift in Sources */,
 				ACFDE039255F995000352271 /* SignUpPresenter.swift in Sources */,
-				AC4B93C02561087000DB660A /* Error.swift in Sources */,
+				AC4B93C02561087000DB660A /* ErrorModel.swift in Sources */,
 				ACFDE02A255F378000352271 /* VCExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

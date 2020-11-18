@@ -375,28 +375,11 @@
                         <outlet property="highlightsCollectionView" destination="bOt-XF-ntp" id="aqy-Km-Wfq"/>
                         <outlet property="newsTableView" destination="auB-1f-WAm" id="YST-rC-zV2"/>
                         <segue destination="dLZ-gz-uFA" kind="show" identifier="FeedToNewsWebView" id="ZaU-Ns-hSj"/>
-                        <segue destination="bfX-8N-lIF" kind="show" identifier="FeedToFilter" id="kzR-L6-JMo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tsH-JS-9r4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2044.9275362318842" y="964.95535714285711"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="iAT-P5-DSf">
-            <objects>
-                <viewController id="bfX-8N-lIF" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="RqJ-5Z-CpV">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="g3T-Md-BU5"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="MWo-Y1-Bia"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Vlw-AX-JGc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3157.971014492754" y="690.40178571428567"/>
+            <point key="canvasLocation" x="623" y="949"/>
         </scene>
         <!--News Web View Controller-->
         <scene sceneID="D0c-x8-wNB">
@@ -431,7 +414,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6bp-3g-bJz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3157.971014492754" y="1389.5089285714284"/>
+            <point key="canvasLocation" x="1590" y="949"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="glR-Gf-7g7">
@@ -471,7 +454,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k63-hM-OZf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1134.7826086956522" y="964.95535714285711"/>
+            <point key="canvasLocation" x="-287" y="949"/>
         </scene>
     </scenes>
     <resources>

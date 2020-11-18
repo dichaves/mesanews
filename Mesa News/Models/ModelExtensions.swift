@@ -1,5 +1,5 @@
 //
-//  ModelsExtensions.swift
+//  ModelExtensions.swift
 //  Mesa News
 //
 //  Created by Diana Monteiro on 15/11/20.

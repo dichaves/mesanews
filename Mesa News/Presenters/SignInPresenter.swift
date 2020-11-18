@@ -21,7 +21,7 @@ class SignInPresenter {
     }
 }
 
-extension SignInPresenter: AuthenticationDelegate {
+extension SignInPresenter: AuthNetworkingDelegate {
     
     func didAuthenticate(user: AuthenticatedUser) {
         ActiveUser.shared.token = user.token

@@ -7,14 +7,14 @@
 
 import Foundation
 
-protocol AuthenticationDelegate {
+protocol AuthNetworkingDelegate {
     func didAuthenticate(user: AuthenticatedUser)
     func didNotAuthenticate(data: Data)
 }
 
 struct AuthNetworking {
     
-    var delegate: AuthenticationDelegate?
+    var delegate: AuthNetworkingDelegate?
     
     func fetchToken(endpoint: InternalUrl.Endpoint) {
         let service = NetworkingService()
