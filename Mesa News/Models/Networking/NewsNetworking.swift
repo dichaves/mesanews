@@ -16,34 +16,12 @@ struct NewsNetworking {
     
     var delegate: NewsNetworkingDelegate?
     
-    //    ?current_page=&per_page=&published_at=
-    //    /highlights
-    
-    func fetchNews(url: String, token: String) {
-        let semaphore = DispatchSemaphore (value: 0)
-        var request = URLRequest(url: URL(string: "https://mesa-news-api.herokuapp.com/v1/client/news" + url)!,timeoutInterval: Double.infinity)
-        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.addValue(token, forHTTPHeaderField: "Authorization")
-        request.httpMethod = "GET"
-        
-        let task = URLSession.shared.dataTask(with: request) { data, response, error in
-            guard let data = data else {
-                print(String(describing: error))
-                return
-            }
-            
-            if let allNews: AllNews = data.decode() {
-                self.delegate?.didGetNews(news: allNews.data)
-            } else {
-                self.delegate?.didNotGetNews(data: data)
-            }
-            
-            semaphore.signal()
+    func fetchNews(endpoint: InternalUrl.Endpoint) {
+        let service = NetworkingService()
+        service.fetch(endpoint: endpoint) { (allNews: AllNews) in
+            self.delegate?.didGetNews(news: allNews.data)
+        } failure: { (data) in
+            self.delegate?.didNotGetNews(data: data)
         }
-        
-        task.resume()
-        semaphore.wait()
     }
 }
-
-

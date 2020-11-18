@@ -9,7 +9,7 @@ import Foundation
 
 class SignInPresenter {
     
-    var authentication = Authentication()
+    var authentication = AuthNetworking()
     var delegate: SignInUpDelegate?
 
     init() {

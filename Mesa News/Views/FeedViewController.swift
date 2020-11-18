@@ -21,7 +21,7 @@ class FeedViewController: UIViewController {
         
         presenter.delegate = self
         
-        presenter.getNews(token: ActiveUser.shared.token)
+        presenter.getNews()
         
         highlightsCollectionView.delegate = self
         highlightsCollectionView.dataSource = self

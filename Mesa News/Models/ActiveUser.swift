@@ -12,5 +12,5 @@ class ActiveUser {
     private init() {}
     static let shared = ActiveUser()
     
-    var token = ""
+    var token: String?
 }

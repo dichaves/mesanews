@@ -20,8 +20,8 @@ class FeedPresenter {
         newsNetworking.delegate = self
     }
     
-    func getNews(token: String) {
-        newsNetworking.fetchNews(url: "/highlights", token: token)
+    func getNews() {
+        newsNetworking.fetchNews(endpoint: .news)
     }
     
 }

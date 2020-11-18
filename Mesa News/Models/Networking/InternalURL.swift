@@ -14,8 +14,8 @@ struct InternalUrl {
     enum Endpoint {
         case signIn(User)
         case signUp(User)
-        case news(token: String)
-        case highlights(token: String)
+        case news
+        case highlights
         
         fileprivate var urlAddition: String {
             switch self {
@@ -36,7 +36,7 @@ struct InternalUrl {
         func encodeBodyData() -> Data? {
             switch self {
             case .signIn(let user), .signUp(let user): return user.encode()
-            case .news(token: _), .highlights(token: _): return nil
+            case .news, .highlights: return nil
             }
         }
     }
@@ -59,6 +59,9 @@ struct InternalUrl {
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.httpMethod = endpoint.httpMethod.httpMethodString
         request.httpBody = endpoint.encodeBodyData()
+        if let token = ActiveUser.shared.token {
+            request.addValue(token, forHTTPHeaderField: "Authorization")
+        }
         return request
     }
 }
