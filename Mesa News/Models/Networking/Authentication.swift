@@ -14,16 +14,11 @@ protocol AuthenticationDelegate {
 
 struct Authentication {
     var semaphore = DispatchSemaphore (value: 0)
-    let authUrl = "https://mesa-news-api.herokuapp.com/v1/client/auth/sign"
     
     var delegate: AuthenticationDelegate?
     
-    func fetchToken(sign: String, postData: Data) {
-        let urlString = authUrl + sign
-        var request = URLRequest(url: URL(string: urlString)!,timeoutInterval: Double.infinity)
-        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.httpMethod = "POST"
-        request.httpBody = postData
+    func fetchToken(endpoint: InternalUrl.Endpoint) {
+        let request = InternalUrl(endpoint: endpoint).createRequest()
         
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
             guard let data = data else {

@@ -14,6 +14,7 @@
 		AC4B93C32561F65300DB660A /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4B93C22561F65300DB660A /* FeedViewController.swift */; };
 		AC4B93C72561FA9E00DB660A /* NewsNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4B93C62561FA9E00DB660A /* NewsNetworking.swift */; };
 		AC61ED0E25656CD500FF3FB2 /* KeyboardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC61ED0D25656CD500FF3FB2 /* KeyboardManager.swift */; };
+		AC61ED1325658F6000FF3FB2 /* InternalURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC61ED1225658F6000FF3FB2 /* InternalURL.swift */; };
 		AC64188E25632ADB005E7F5E /* HighlightsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC64188D25632ADB005E7F5E /* HighlightsCell.swift */; };
 		AC809CB5255E378C00C6DB75 /* AuthenticatedUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC809CB4255E378C00C6DB75 /* AuthenticatedUser.swift */; };
 		AC809CBC255E570F00C6DB75 /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC809CBB255E570F00C6DB75 /* Authentication.swift */; };
@@ -45,6 +46,7 @@
 		AC4B93C22561F65300DB660A /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		AC4B93C62561FA9E00DB660A /* NewsNetworking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsNetworking.swift; sourceTree = "<group>"; };
 		AC61ED0D25656CD500FF3FB2 /* KeyboardManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardManager.swift; sourceTree = "<group>"; };
+		AC61ED1225658F6000FF3FB2 /* InternalURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternalURL.swift; sourceTree = "<group>"; };
 		AC64188D25632ADB005E7F5E /* HighlightsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighlightsCell.swift; sourceTree = "<group>"; };
 		AC809CB4255E378C00C6DB75 /* AuthenticatedUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticatedUser.swift; sourceTree = "<group>"; };
 		AC809CBB255E570F00C6DB75 /* Authentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authentication.swift; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 		AC4B93BC2560FE6B00DB660A /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				AC61ED1225658F6000FF3FB2 /* InternalURL.swift */,
 				AC809CBB255E570F00C6DB75 /* Authentication.swift */,
 				AC4B93C62561FA9E00DB660A /* NewsNetworking.swift */,
 			);
@@ -317,6 +320,7 @@
 				AC61ED0E25656CD500FF3FB2 /* KeyboardManager.swift in Sources */,
 				AC809CB5255E378C00C6DB75 /* AuthenticatedUser.swift in Sources */,
 				AC4B93AB2560E5DB00DB660A /* NewsModel.swift in Sources */,
+				AC61ED1325658F6000FF3FB2 /* InternalURL.swift in Sources */,
 				AC64188E25632ADB005E7F5E /* HighlightsCell.swift in Sources */,
 				ACA0F0522564854E00329B68 /* ActiveUser.swift in Sources */,
 				AC4B93C32561F65300DB660A /* FeedViewController.swift in Sources */,

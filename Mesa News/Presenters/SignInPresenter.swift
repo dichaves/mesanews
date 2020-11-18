@@ -17,8 +17,7 @@ class SignInPresenter {
     }
     
     func getSignedIn(email: String, password: String) {
-        let data = SignInUser(email: email, password: password).encode()
-        authentication.fetchToken(sign: "in", postData: data!)
+        authentication.fetchToken(endpoint: .signIn(User(email: email, password: password)))
     }
 }
 

@@ -17,8 +17,7 @@ class SignUpPresenter: AuthenticationDelegate {
     }
     
     func getSignedUp(name: String, email: String, password: String, birthDate: String) {
-        let data = SignUpUser(name: name, email: email, password: password, birthDate: birthDate).encode()
-        authentication.fetchToken(sign: "up", postData: data!)
+        authentication.fetchToken(endpoint: .signUp(User(name: name, email: email, password: password, birthDate: birthDate)))
     }
     
     func didAuthenticate(user: AuthenticatedUser) {
