@@ -13,6 +13,7 @@
 		AC4B93C02561087000DB660A /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4B93BF2561087000DB660A /* Error.swift */; };
 		AC4B93C32561F65300DB660A /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4B93C22561F65300DB660A /* FeedViewController.swift */; };
 		AC4B93C72561FA9E00DB660A /* NewsNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4B93C62561FA9E00DB660A /* NewsNetworking.swift */; };
+		AC61ED0E25656CD500FF3FB2 /* KeyboardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC61ED0D25656CD500FF3FB2 /* KeyboardManager.swift */; };
 		AC64188E25632ADB005E7F5E /* HighlightsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC64188D25632ADB005E7F5E /* HighlightsCell.swift */; };
 		AC809CB5255E378C00C6DB75 /* AuthenticatedUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC809CB4255E378C00C6DB75 /* AuthenticatedUser.swift */; };
 		AC809CBC255E570F00C6DB75 /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC809CBB255E570F00C6DB75 /* Authentication.swift */; };
@@ -27,7 +28,7 @@
 		ACA3C048255CD3A40047A979 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACA3C046255CD3A40047A979 /* Main.storyboard */; };
 		ACA3C04A255CD3A60047A979 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACA3C049255CD3A60047A979 /* Assets.xcassets */; };
 		ACA3C04D255CD3A60047A979 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACA3C04B255CD3A60047A979 /* LaunchScreen.storyboard */; };
-		ACFDE02A255F378000352271 /* ViewsExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFDE029255F378000352271 /* ViewsExtensions.swift */; };
+		ACFDE02A255F378000352271 /* VCExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFDE029255F378000352271 /* VCExtensions.swift */; };
 		ACFDE02D255F387600352271 /* SignInUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFDE02C255F387600352271 /* SignInUser.swift */; };
 		ACFDE030255F38AB00352271 /* SignUpUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFDE02F255F38AB00352271 /* SignUpUser.swift */; };
 		ACFDE033255F3A7200352271 /* SignInPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFDE032255F3A7200352271 /* SignInPresenter.swift */; };
@@ -43,6 +44,7 @@
 		AC4B93BF2561087000DB660A /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
 		AC4B93C22561F65300DB660A /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		AC4B93C62561FA9E00DB660A /* NewsNetworking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsNetworking.swift; sourceTree = "<group>"; };
+		AC61ED0D25656CD500FF3FB2 /* KeyboardManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardManager.swift; sourceTree = "<group>"; };
 		AC64188D25632ADB005E7F5E /* HighlightsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighlightsCell.swift; sourceTree = "<group>"; };
 		AC809CB4255E378C00C6DB75 /* AuthenticatedUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticatedUser.swift; sourceTree = "<group>"; };
 		AC809CBB255E570F00C6DB75 /* Authentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authentication.swift; sourceTree = "<group>"; };
@@ -59,7 +61,7 @@
 		ACA3C049255CD3A60047A979 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ACA3C04C255CD3A60047A979 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ACA3C04E255CD3A60047A979 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		ACFDE029255F378000352271 /* ViewsExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewsExtensions.swift; sourceTree = "<group>"; };
+		ACFDE029255F378000352271 /* VCExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCExtensions.swift; sourceTree = "<group>"; };
 		ACFDE02C255F387600352271 /* SignInUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInUser.swift; sourceTree = "<group>"; };
 		ACFDE02F255F38AB00352271 /* SignUpUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpUser.swift; sourceTree = "<group>"; };
 		ACFDE032255F3A7200352271 /* SignInPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInPresenter.swift; sourceTree = "<group>"; };
@@ -89,6 +91,15 @@
 			path = Networking;
 			sourceTree = "<group>";
 		};
+		AC61ED1025658B8500FF3FB2 /* FeedVC */ = {
+			isa = PBXGroup;
+			children = (
+				AC64188D25632ADB005E7F5E /* HighlightsCell.swift */,
+				ACA2C9FF2563AAB9006313E7 /* NewsCell.swift */,
+			);
+			path = FeedVC;
+			sourceTree = "<group>";
+		};
 		AC809CB2255E367700C6DB75 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -109,11 +120,11 @@
 			children = (
 				ACA3C044255CD3A40047A979 /* SignInViewController.swift */,
 				AC809CBE255F0F5000C6DB75 /* SignUpViewController.swift */,
+				AC61ED0D25656CD500FF3FB2 /* KeyboardManager.swift */,
 				AC4B93C22561F65300DB660A /* FeedViewController.swift */,
-				AC64188D25632ADB005E7F5E /* HighlightsCell.swift */,
-				ACA2C9FF2563AAB9006313E7 /* NewsCell.swift */,
+				AC61ED1025658B8500FF3FB2 /* FeedVC */,
 				ACA0F05E2564AC1200329B68 /* NewsWebViewController.swift */,
-				ACFDE029255F378000352271 /* ViewsExtensions.swift */,
+				ACFDE029255F378000352271 /* VCExtensions.swift */,
 				ACA3C046255CD3A40047A979 /* Main.storyboard */,
 			);
 			path = Views;
@@ -303,6 +314,7 @@
 				AC4B93C72561FA9E00DB660A /* NewsNetworking.swift in Sources */,
 				ACFDE033255F3A7200352271 /* SignInPresenter.swift in Sources */,
 				ACA0F05F2564AC1200329B68 /* NewsWebViewController.swift in Sources */,
+				AC61ED0E25656CD500FF3FB2 /* KeyboardManager.swift in Sources */,
 				AC809CB5255E378C00C6DB75 /* AuthenticatedUser.swift in Sources */,
 				AC4B93AB2560E5DB00DB660A /* NewsModel.swift in Sources */,
 				AC64188E25632ADB005E7F5E /* HighlightsCell.swift in Sources */,
@@ -315,7 +327,7 @@
 				ACA3C043255CD3A40047A979 /* SceneDelegate.swift in Sources */,
 				ACFDE039255F995000352271 /* SignUpPresenter.swift in Sources */,
 				AC4B93C02561087000DB660A /* Error.swift in Sources */,
-				ACFDE02A255F378000352271 /* ViewsExtensions.swift in Sources */,
+				ACFDE02A255F378000352271 /* VCExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

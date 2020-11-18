@@ -11,5 +11,5 @@ struct SignUpUser: Encodable {
     let name: String
     let email: String
     let password: String
-//    let birthDate: Date?
+    let birthDate: String?
 }
