@@ -31,52 +31,18 @@ struct NewsNetworking {
                 print(String(describing: error))
                 return
             }
-            print(String(data: data, encoding: .utf8)!)
             
-            if url == "/highlights" {
-                if let allNews = self.decodeHighlightNews(newsData: data) {
-                    self.delegate?.didGetNews(news: allNews.data)
-                } else {
-                    self.delegate?.didNotGetNews(data: data)
-                }
+            if let allNews: AllNews = data.decode() {
+                self.delegate?.didGetNews(news: allNews.data)
             } else {
-                if let allNews = self.decodeAllNews(newsData: data) {
-                    self.delegate?.didGetNews(news: allNews.data)
-                } else {
-                    self.delegate?.didNotGetNews(data: data)
-                }
+                self.delegate?.didNotGetNews(data: data)
             }
-   
+            
             semaphore.signal()
         }
         
         task.resume()
         semaphore.wait()
-    }
-    
-    
-    func decodeAllNews(newsData: Data) -> AllNews? {
-        let decoder = JSONDecoder()
-        do {
-            let allNews = try decoder.decode(AllNews.self, from: newsData)
-            print(allNews)
-            return allNews
-        } catch {
-            print(error)
-            return nil
-        }
-    }
-    
-    func decodeHighlightNews(newsData: Data) -> HighlightNews? {
-        let decoder = JSONDecoder()
-        do {
-            let highlightNews = try decoder.decode(HighlightNews.self, from: newsData)
-            print(highlightNews)
-            return highlightNews
-        } catch {
-            print(error)
-            return nil
-        }
     }
 }
 

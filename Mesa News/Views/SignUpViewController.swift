@@ -14,7 +14,6 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var confirmPasswordField: UITextField!
     @IBOutlet weak var birthDateField: UITextField!
-    @IBOutlet weak var errorMessageLabel: UILabel!
     
     var presenter = SignUpPresenter()
     
@@ -46,8 +45,9 @@ extension SignUpViewController: SignInUpDelegate {
 
     func userDidNotAuth(errorMessage: String) {
         DispatchQueue.main.async {
-            self.errorMessageLabel.text = errorMessage
-            self.errorMessageLabel.isHidden = false
+            let alert = UIAlertController(title: "Falha ao cadastrar", message: errorMessage, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Entendi", style: .cancel, handler: nil))
+            self.present(alert, animated: true)
         }
     }
 }

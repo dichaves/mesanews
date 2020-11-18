@@ -20,18 +20,17 @@ extension Encodable {
     }
 }
 
-//extension Decodable {
-//    func decode(data: Data, resultType: ) -> Error? {
-//        let decoder = JSONDecoder()
-//        do {
-//            let decodedData = try decoder.decode(resultType, from: data)
-//            print(decodedData)
-//            return decodedData
-//        } catch {
-//            print(error)
-//            return nil
-//        }
-//    }
-//}
+extension Data {
+    func decode<T:Decodable>() -> T? {
+        let decoder = JSONDecoder()
+        do {
+            let allNews = try decoder.decode(T.self, from: self)
+            return allNews
+        } catch {
+            print(error)
+            return nil
+        }
+    }
+}
 
 

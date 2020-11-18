@@ -18,7 +18,6 @@ struct Authentication {
     
     var delegate: AuthenticationDelegate?
     
-    
     func fetchToken(sign: String, postData: Data) {
         let urlString = authUrl + sign
         var request = URLRequest(url: URL(string: urlString)!,timeoutInterval: Double.infinity)
@@ -31,30 +30,18 @@ struct Authentication {
                 print(String(describing: error))
                 return
             }
-            print(String(data: data, encoding: .utf8)!)
-            if let userAuth = self.parseJSON(authData: data) {
+            
+            if let userAuth: AuthenticatedUser = data.decode() {
                 self.delegate?.didAuthenticate(user: userAuth)
             } else {
                 self.delegate?.didNotAuthenticate(data: data)
             }
+            
             semaphore.signal()
         }
         
         task.resume()
         semaphore.wait()
-    }
-    
-    
-    func parseJSON(authData: Data) -> AuthenticatedUser? {
-        let decoder = JSONDecoder()
-        do {
-            let activeUser = try decoder.decode(AuthenticatedUser.self, from: authData)
-            print(activeUser)
-            return activeUser
-        } catch {
-            print(error)
-            return nil
-        }
     }
 }
 

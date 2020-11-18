@@ -9,7 +9,6 @@ import Foundation
 import UIKit
 
 protocol SignInUpDelegate {
-    
     func userDidAuth()
     func userDidNotAuth(errorMessage: String)
 }

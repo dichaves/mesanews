@@ -30,19 +30,8 @@ extension SignInPresenter: AuthenticationDelegate {
     }
     
     func didNotAuthenticate(data: Data) {
-        let error = decodeError(errorData: data)!
-        delegate?.userDidNotAuth(errorMessage: error.message)
-    }
-    
-    func decodeError(errorData: Data) -> Error? {
-        let decoder = JSONDecoder()
-        do {
-            let decodedData = try decoder.decode(Error.self, from: errorData)
-            print(decodedData)
-            return decodedData
-        } catch {
-            print(error)
-            return nil
+        if let error: Error = data.decode() {
+            delegate?.userDidNotAuth(errorMessage: error.message)
         }
     }
 }

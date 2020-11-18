@@ -13,7 +13,6 @@ class SignInViewController: UIViewController {
     @IBOutlet weak var loginEmail: UITextField!
     @IBOutlet weak var loginPassword: UITextField!
     @IBOutlet weak var signInView: UIStackView!
-    @IBOutlet weak var errorMessageLabel: UILabel!
     
     var presenter = SignInPresenter()
     var token: String?
@@ -37,8 +36,7 @@ class SignInViewController: UIViewController {
         // COLOCAR NO PRESENTER:
         // This will trigger after successfully login / logout
         NotificationCenter.default.addObserver(forName: .AccessTokenDidChange, object: nil, queue: OperationQueue.main) { (notification) in
-            
-            // Print out access token
+        
             print("FB Access Token: \(String(describing: AccessToken.current?.tokenString))")
         }
     }
@@ -57,8 +55,9 @@ extension SignInViewController: SignInUpDelegate {
 
     func userDidNotAuth(errorMessage: String) {
         DispatchQueue.main.async {
-            self.errorMessageLabel.text = errorMessage
-            self.errorMessageLabel.isHidden = false
+            let alert = UIAlertController(title: "Falha ao fazer login", message: "E-mail e/ou senha incorretos", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Entendi", style: .cancel, handler: nil))
+            self.present(alert, animated: true)
         }
     }
 }

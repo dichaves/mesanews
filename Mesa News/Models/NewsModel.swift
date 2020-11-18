@@ -8,7 +8,7 @@
 import Foundation
 
 struct AllNews: Codable {
-    let pagination: Pagination
+    let pagination: Pagination?
     let data: [SingleNews]
 }
 
@@ -19,16 +19,12 @@ struct Pagination: Codable {
     let total_items: Int
 }
 
-struct HighlightNews: Codable {
-    let data: [SingleNews]
-}
-
 struct SingleNews: Codable {
     let title: String
     let description: String
     let content: String
     let author: String
-    let published_at: String // formato de data?
+    let published_at: String
     let highlight: Bool
     let url: String
     let image_url: String

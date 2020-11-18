@@ -27,22 +27,11 @@ class SignUpPresenter: AuthenticationDelegate {
     }
     
     func didNotAuthenticate(data: Data) {
-        let signUpErrors = decodeError(errorData: data)!
-        var message = ""
-        for error in signUpErrors.errors {
-            message += "\(error.message)\n"
-        }
-        delegate?.userDidNotAuth(errorMessage: message)
-    }
-    
-    func decodeError(errorData: Data) -> SignUpErrors? {
-        let decoder = JSONDecoder()
-        do {
-            let decodedData = try decoder.decode(SignUpErrors.self, from: errorData)
-            return decodedData
-        } catch {
-            print(error)
-            return nil
+        if let signUpErrors: SignUpErrors = data.decode() {
+            let errorMessages = signUpErrors.errors.map { $0.message }
+            let message = errorMessages.joined(separator: "\n")
+            
+            delegate?.userDidNotAuth(errorMessage: message)
         }
     }
 }
