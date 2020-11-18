@@ -19,6 +19,7 @@
 		AC809CBF255F0F5000C6DB75 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC809CBE255F0F5000C6DB75 /* SignUpViewController.swift */; };
 		ACA0F0522564854E00329B68 /* ActiveUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA0F0512564854E00329B68 /* ActiveUser.swift */; };
 		ACA0F05B2564981E00329B68 /* SignInUpDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA0F05A2564981E00329B68 /* SignInUpDelegate.swift */; };
+		ACA0F05F2564AC1200329B68 /* NewsWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA0F05E2564AC1200329B68 /* NewsWebViewController.swift */; };
 		ACA2CA002563AAB9006313E7 /* NewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA2C9FF2563AAB9006313E7 /* NewsCell.swift */; };
 		ACA3C041255CD3A40047A979 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA3C040255CD3A40047A979 /* AppDelegate.swift */; };
 		ACA3C043255CD3A40047A979 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA3C042255CD3A40047A979 /* SceneDelegate.swift */; };
@@ -48,6 +49,7 @@
 		AC809CBE255F0F5000C6DB75 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		ACA0F0512564854E00329B68 /* ActiveUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveUser.swift; sourceTree = "<group>"; };
 		ACA0F05A2564981E00329B68 /* SignInUpDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInUpDelegate.swift; sourceTree = "<group>"; };
+		ACA0F05E2564AC1200329B68 /* NewsWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsWebViewController.swift; sourceTree = "<group>"; };
 		ACA2C9FF2563AAB9006313E7 /* NewsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCell.swift; sourceTree = "<group>"; };
 		ACA3C03D255CD3A40047A979 /* Mesa News.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mesa News.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACA3C040255CD3A40047A979 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 				AC4B93C22561F65300DB660A /* FeedViewController.swift */,
 				AC64188D25632ADB005E7F5E /* HighlightsCell.swift */,
 				ACA2C9FF2563AAB9006313E7 /* NewsCell.swift */,
+				ACA0F05E2564AC1200329B68 /* NewsWebViewController.swift */,
 				ACFDE029255F378000352271 /* ViewsExtensions.swift */,
 				ACA3C046255CD3A40047A979 /* Main.storyboard */,
 			);
@@ -299,6 +302,7 @@
 				ACA0F05B2564981E00329B68 /* SignInUpDelegate.swift in Sources */,
 				AC4B93C72561FA9E00DB660A /* NewsNetworking.swift in Sources */,
 				ACFDE033255F3A7200352271 /* SignInPresenter.swift in Sources */,
+				ACA0F05F2564AC1200329B68 /* NewsWebViewController.swift in Sources */,
 				AC809CB5255E378C00C6DB75 /* AuthenticatedUser.swift in Sources */,
 				AC4B93AB2560E5DB00DB660A /* NewsModel.swift in Sources */,
 				AC64188E25632ADB005E7F5E /* HighlightsCell.swift in Sources */,

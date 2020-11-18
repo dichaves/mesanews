@@ -8,12 +8,13 @@
 import UIKit
 
 class FeedViewController: UIViewController {
-
+    
     @IBOutlet weak var highlightsCollectionView: UICollectionView!
     @IBOutlet weak var newsTableView: UITableView!
     
     var presenter = FeedPresenter()
     var news: [SingleNews]?
+    var urlStr: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,8 +32,11 @@ class FeedViewController: UIViewController {
         
         newsTableView.delegate = self
         newsTableView.dataSource = self
+        
+        newsTableView.rowHeight = UITableView.automaticDimension
+        newsTableView.estimatedRowHeight = 600
     }
-
+    
 }
 
 extension FeedViewController: FeedDelegate {
@@ -45,38 +49,54 @@ extension FeedViewController: UICollectionViewDelegate, UICollectionViewDataSour
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
-      }
-
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.news!.count
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HighlightsCell", for: indexPath) as! HighlightsCell
         cell.news = news![indexPath.item]
         return cell
     }
-
+    
     func collectionView(_ collectionView: UICollectionView,
-                          layout collectionViewLayout: UICollectionViewLayout,
-                          sizeForItemAt indexPath: IndexPath) -> CGSize {
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath) -> CGSize {
         let widthPerItem = view.frame.width * 0.8
         let heightPerItem = highlightsCollectionView.frame.height
-
+        
         return CGSize(width: widthPerItem, height: heightPerItem)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 0, left: 15, bottom: 0, right: 15)
     }
 }
 
 extension FeedViewController: UITableViewDelegate, UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.news!.count
     }
-
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "NewsCell", for: indexPath) as! NewsCell
         cell.news = news![indexPath.item]
         return cell
     }
-
-
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        urlStr = news![indexPath.item].url
+        DispatchQueue.main.async { self.performSegue(withIdentifier: "FeedToNewsWebView", sender: self) }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        guard let newsWebVC = segue.destination as? NewsWebViewController else {
+            return
+        }
+        newsWebVC.urlStr = urlStr
+    }
 }
